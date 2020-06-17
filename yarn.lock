@@ -12163,7 +12163,7 @@ react-dev-utils@^4.2.3:
     strip-ansi "3.0.1"
     text-table "0.2.0"
 
-react-dom@^16.12.0, react-dom@^16.13.1:
+react-dom@^16.12.0, react-dom@^16.13.1, react-dom@^16.6.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
   integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
@@ -12240,6 +12240,15 @@ react-icons@^3.10.0:
   integrity sha512-WsQ5n1JToG9VixWilSo1bHv842Cj5aZqTGiS3Ud47myF6aK7S/IUY2+dHcBdmkQcCFRuHsJ9OMUI0kTDfjyZXQ==
   dependencies:
     camelcase "^5.0.0"
+
+react-intl-context@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-intl-context/-/react-intl-context-1.0.3.tgz#7480113cbf5507f3c90ced1aa2ed546b65ece44c"
+  integrity sha512-NCP39jNnGcshj51QK5exVK05B2Yz1ybQJYwYGRW9nEa0x16k09mzDdlSpi+uJu+WlOLiG2iaK5p2UMVDp6v1ug==
+  dependencies:
+    prop-types "^15.6.2"
+    react "^16.6.0"
+    react-dom "^16.6.0"
 
 react-intl@^3.12.0:
   version "3.12.1"
@@ -12327,7 +12336,7 @@ react-style-singleton@^2.1.0:
     invariant "^2.2.4"
     tslib "^1.0.0"
 
-react@^16.12.0, react@^16.13.1, react@^16.8.0:
+react@^16.12.0, react@^16.13.1, react@^16.6.0, react@^16.8.0:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
   integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
