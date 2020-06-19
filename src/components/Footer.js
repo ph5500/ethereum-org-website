@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
 import { getLangVersion } from "../utils/translations"
+import { SocialIcon } from "react-social-icons"
 
 // import { IntlProvider } from "react-intl-context"
 
@@ -67,18 +68,18 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: "github",
-      to: <a href="https://github.com/ethereum"> Github</a>,
+      to: <SocialIcon url="https://github.com/ethereum"> Github></SocialIcon>,
     },
     {
       icon: "twitter",
-      to: <a href="https://twitter.com/ethereum">Twitter</a>,
+      to: <SocialIcon url="https://twitter.com/ethereum">Twitter</SocialIcon>,
     },
     {
       icon: "youtube",
       to: (
-        <a href="https://youtube.com/channel/UCNOfzGXD_C9YMYmnefmPH0g">
+        <SocialIcon url="https://youtube.com/channel/UCNOfzGXD_C9YMYmnefmPH0g">
           Youtube
-        </a>
+        </SocialIcon>
       ),
     },
   ]
