@@ -2,7 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import { useIntl, FormattedMessage } from "gatsby-plugin-intl"
 import { getLangVersion } from "../utils/translations"
-import { IntlProvider } from "react-intl-context"
+
+// import { IntlProvider } from "react-intl-context"
 
 // const linkSections = ({ langVersion, langPath }) => {
 //   const contentVersion = translate("version", this.$lang)
@@ -19,15 +20,19 @@ const StyledFooter = styled.footer`
   margin: 0 auto;
 `
 
+const StyledSocial = styled.footer`
+  ul {
+    list-style-type: none;
+  }
+`
+
 const StyledFooter_2 = styled.footer`
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding-top: 3rem;
-  padding-bottom: 4rem;
-  width: 85vw;
-  max-width: 1440px;
-  margin: 0 auto;
+  ul {
+    list-style-type: none;
+  }
+`
+
+const StyledFooter_3 = styled.footer`
   &:hover {
     color: blue; // <Thing> when hovered
   }
@@ -44,6 +49,40 @@ const Footer = () => {
   const intl = useIntl()
 
   const contentVersion = getLangVersion(intl.locale)
+  // const socialLinks = [
+  //       {
+  //         icon: 'github',
+  //         to: 'https://github.com/ethereum'
+  //       },
+  //       {
+  //         icon: 'twitter',
+  //         to: 'https://twitter.com/ethereum'
+  //       },
+  //       {
+  //         icon: 'youtube',
+  //         to: 'https://youtube.com/channel/UCNOfzGXD_C9YMYmnefmPH0g'
+  //       }
+  //     ]
+  //   },
+  const socialLinks = [
+    {
+      icon: "github",
+      to: <a href="https://github.com/ethereum"> Github</a>,
+    },
+    {
+      icon: "twitter",
+      to: <a href="https://twitter.com/ethereum">Twitter</a>,
+    },
+    {
+      icon: "youtube",
+      to: (
+        <a href="https://youtube.com/channel/UCNOfzGXD_C9YMYmnefmPH0g">
+          Youtube
+        </a>
+      ),
+    },
+  ]
+
   const linkSections = [
     {
       title: "page-individuals",
@@ -198,38 +237,43 @@ const Footer = () => {
       <FooterTop>
         <div>Last updated: Today</div>
         <div>
-          <ul>
-            <li>social icons </li>
-            <li>social icons </li>
-            <li>social icons </li>
-          </ul>
+          {socialLinks.map((section, idx) => {
+            return (
+              //  <div key={idx}>
+              <StyledSocial>
+                <ul>
+                  <li key={idx}>{section.to}</li>
+                </ul>
+              </StyledSocial>
+            )
+          })}
         </div>
       </FooterTop>
-      <StyledFooter_2>
-        {linkSections.map((section, idx) => {
-          return (
-            <div key={idx}>
-              <h3>
-                <FormattedMessage id={section.title} />{" "}
-              </h3>
+
+      {linkSections.map((section, idx) => {
+        return (
+          <div key={idx}>
+            <h3>
+              <FormattedMessage id={section.title} />
+            </h3>
+            <StyledFooter_2>
               <ul>
                 {section.links
                   .filter((link) => link.shouldDisplay === true)
                   .map((link, linkIdx) => {
                     return (
-                      <li key={linkIdx}>
-                        <Link to={link.to}>
+                      <StyledFooter_3>
+                        <li key={linkIdx}>
                           <FormattedMessage id={link.text} />
-                        </Link>
-                      </li>
+                        </li>
+                      </StyledFooter_3>
                     )
                   })}
               </ul>
-            </div>
-          )
-        })}
-      </StyledFooter_2>
-
+            </StyledFooter_2>
+          </div>
+        )
+      })}
       {/* add dynamic links */}
       {/* <div>
         <h3>Individuals</h3>
